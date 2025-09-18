@@ -1,0 +1,45 @@
+package Day21;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeleniumWebdriver2 {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup(); // this is used to manage the versions btween chrome and selenium
+		
+		
+		//1. launch the chrome browser
+		
+		WebDriver driver = new ChromeDriver();
+		
+		
+		//2. open URL 
+		driver.get("https://www.amazon.in/");
+		
+		
+		
+		//3. Validate the page
+		
+		String title =driver.getTitle();
+		System.out.println(title);
+		
+		if(title.equals("Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in"))
+		{
+			System.out.println("Test Pass");
+		}else
+		{
+			System.out.println("Test fail");
+		}
+		
+		//4. close browser
+		
+		
+
+	}
+
+}

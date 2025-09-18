@@ -1,0 +1,19 @@
+package RD_Learning;
+
+import java.util.Scanner;
+
+public class PrintABCDtoAABBCCDD {
+
+	public static void main(String[] args) {
+		
+		
+		
+		String s ="ABCD";
+		
+		StringBuilder res = new StringBuilder();
+		
+		
+				
+	}
+
+}

@@ -1,0 +1,23 @@
+class Main {
+    public static void main(String[] args) {
+
+      int a[] = {5, 10, 7, 20};
+      int b[]= {2, 9, 15, 6};
+      
+      List<Integer> list = new ArrayList<>();
+      for(int i=0; i<a.length;i++)
+      {
+          list.add(i);
+      }
+      
+      for(int j=0;j<b.length;j++)
+      {
+          list.add(j);
+      }
+      System.out.println(list);
+      
+      
+      
+        
+    }
+}

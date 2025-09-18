@@ -1,0 +1,22 @@
+package Day25;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Facebook {
+
+	public static void main(String[] args) 
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/r.php");
+		driver.findElement(By.xpath("//div[@id='reg_form_box']/child::div[11]/button"));
+
+	}
+
+}

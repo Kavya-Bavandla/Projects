@@ -1,0 +1,62 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Day25 {
+
+	public static void main(String[] args) 
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		
+		driver.get("https://money.rediff.com/gainers/bse/daily/groupa");
+		
+		//1.Self--selects the current node
+		String text = driver.findElement(By.xpath("//a[contains(text(), 'Zomato')]/self::a")).getText();
+		System.out.println("Self Node: " + text);
+		
+		//2. Parent --selects the parent of current node(always one)
+		text = driver.findElement(By.xpath("//a[contains(text(), 'Zomato')]/parent::td")).getText();
+		System.out.println("Parent Node: " + text);
+		
+		//3. child- selects the children of current node(one or many)
+		List<WebElement> childs = driver.findElements(By.xpath("//a[contains(text(), 'Zomato')]/ancestor::tr/child::td"));
+		System.out.println("child node size: " + childs.size());
+		
+		//4. ancestor-selects all the ancestor(parent and grand parent)
+		String text1 = driver.findElement(By.xpath("//a[contains(text(), 'Zomato')]/ancestor::tr")).getText();
+		System.out.println("ancestor Node: " + text1);
+		
+		//5. Descendant--selects all the descendants ( child an dgrand child
+		List<WebElement> descendants = driver.findElements(By.xpath("//a[contains(text(),'Zomato')]/ancestor::tr/descendant::*"));
+		System.out.println("descendants Node:"+ descendants.size());
+		
+		//6.following--selects the everythin gin the doc after the closing tag of curent node
+		List<WebElement> Following =driver.findElements(By.xpath("//a[normalize-space()='Zomato']/following::td"));
+		System.out.println("Following Node:"+ Following.size());
+		
+		List <WebElement> followingnodes = driver.findElements(By.xpath("//a[normalize-space()='Zomato']/ancestor::tr/following::tr"));
+		System.out.println("Following Node:"+ Following.size());
+		
+		//7.following sibling -nodes
+		List <WebElement> followingsiblinnodes = driver.findElements(By.xpath("//a[normalize-space()='Zomato']/ancestor::tr/following-sibling::tr"));
+		System.out.println("followingsiblinnodes Node:"+ followingsiblinnodes.size());
+		
+		//8. preceding--selects all nodes before appreaing  in the doc
+		List<WebElement> preceding =driver.findElements(By.xpath("//a[normalize-space()='Zomato']/ancestor::tr/preceding::tr"));
+		System.out.println("preceding Node:"+ preceding.size());
+		
+		//9.preceeding -sibling
+		List <WebElement> precessingsibling = driver.findElements(By.xpath("//a[normalize-space()='Zomato']/ancestor::tr/preceding-sibling::tr"));
+		System.out.println("precessingsibling Node:"+ precessingsibling.size());
+		
+	}
+
+}

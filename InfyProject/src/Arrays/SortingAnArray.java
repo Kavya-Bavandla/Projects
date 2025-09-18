@@ -1,0 +1,30 @@
+package Arrays;
+
+public class SortingAnArray {
+
+    public static void main(String[] args) {
+        int a[] = {3, 1, 2};
+        int temp = 0;
+
+        for (int i = 0; i < a.length - 1; i++) 
+        {
+            for (int j = 0; j < a.length - 1 - i; j++) 
+            {
+                if (a[j] > a[j + 1]) 
+                {
+                    temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print the sorted array
+        System.out.print("The sorted Array is ");
+        for (int i = 0; i < a.length; i++) 
+        {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+}

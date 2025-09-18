@@ -1,0 +1,40 @@
+package Collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		List<Employee> ls = new ArrayList<>();
+		Employee e1 = new Employee("sai","1");
+		Employee e2 = new Employee("sai","2");
+		Employee e3 = new Employee("sai","3");
+		Employee e4 = new Employee("sai","1");
+		Employee e5 = new Employee("sai","4");
+		Employee e6 = new Employee("sai","5");
+		Employee e7 = new Employee("sai","2");
+		Employee e8 = new Employee("sai","10");
+		ls.add(e1);
+		ls.add(e2);
+		ls.add(e3);
+		ls.add(e4);
+		ls.add(e5);
+		ls.add(e6);
+		ls.add(e7);
+		ls.add(e8);
+		System.out.println(ls);
+		
+		
+		
+
+
+
+		
+		
+	}
+
+}

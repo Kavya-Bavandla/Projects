@@ -1,0 +1,17 @@
+package RD_Learning;
+
+public class Class 
+{
+
+	public static void main(String[] args) 
+	{
+		
+		String s1="tops";
+		String s2="stop";
+		
+		char ch1[]=s1.toCharArray();
+		char ch2[]=s1.toCharArray();
+
+	}
+
+}

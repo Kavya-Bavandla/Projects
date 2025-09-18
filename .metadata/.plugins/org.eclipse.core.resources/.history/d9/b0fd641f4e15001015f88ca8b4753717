@@ -1,0 +1,26 @@
+package RD_Learning;
+
+import java.util.Scanner;
+
+public class CheckGivenInputisString {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the string");
+		
+		
+		String input =sc.nextLine();
+		
+		if(input.matches("[a-zA-Z]+"))
+		{
+			System.out.println("givn input is string");
+		}else
+		{
+			System.out.println("given input is not string");
+		}
+				
+	}
+
+}

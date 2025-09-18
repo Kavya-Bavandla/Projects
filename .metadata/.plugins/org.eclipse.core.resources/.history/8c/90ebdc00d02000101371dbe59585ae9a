@@ -1,0 +1,23 @@
+package Learning;
+
+public class PG4PrimeNumber {
+
+	public static void main(String[] args) {
+		
+		
+		
+		int num =12;
+	
+		for(int i=0;i<s.length();i++)
+		{
+			for(int j=i;j<s.length();j++)
+			{
+				String res =s.substring(i,j);
+				System.out.println(res);
+			}
+
+		}
+
+	}
+
+}

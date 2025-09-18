@@ -1,0 +1,46 @@
+package Day28;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Assignment {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.manage().window().maximize();
+		
+		WebElement status = driver.findElement(By.xpath("//input[@id='Wikipedia1_wikipedia-search-input']"));
+		System.out.println(status.isEnabled());
+		status.sendKeys("Selenium");
+		driver.findElement(By.xpath("//input[@type = 'submit' ]")).click();
+		
+		
+		List <WebElement> Links =driver.findElements(By.id("wikipedia-search-result-link"));
+		System.out.println(Links.size());
+		
+		
+		driver.findElement(By.linkText("Selenium")).click();
+		driver.findElement(By.linkText("Selenium in biology")).click();
+		driver.findElement(By.linkText("Selenium (software)")).click();
+		driver.findElement(By.linkText("Selenium disulfide")).click();
+		driver.findElement(By.linkText("Selenium dioxide")).click();
+		
+		
+		
+
+	}
+
+}

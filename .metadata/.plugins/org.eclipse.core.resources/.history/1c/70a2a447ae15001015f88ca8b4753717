@@ -1,0 +1,36 @@
+package RD_Learning;
+
+
+interface I1
+{
+	
+	default void m1()
+	{
+		System.out.println("this I1 is default");
+	}
+}
+interface I2
+{
+	default void m1()
+	{
+		System.out.println("this I2  default");
+	}
+
+}
+public class Hello implements  I1, I2
+{
+	public static void main(String[] args) {
+		
+
+		Hello c = new Hello();
+		c.m1();
+		
+	}
+
+	@Override
+	 public void m1() {
+		// TODO Auto-generated method stub
+		I1.super.m1();
+	}
+
+}

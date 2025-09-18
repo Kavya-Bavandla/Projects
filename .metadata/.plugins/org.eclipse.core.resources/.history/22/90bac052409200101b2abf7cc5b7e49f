@@ -1,0 +1,45 @@
+package Day43;
+
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+public class HardVsSoftAssertions {
+	
+	/*
+	@Test
+	void test_hardassertions()
+	{
+		System.out.println("testing---------");
+		System.out.println("testing---------");
+
+		//Assert.assertEquals(1, 1); all 4 lines are executed
+		
+		Assert.assertEquals(1, 2); //only above 2 lines are executed
+		
+		System.out.println("testing---------");
+		System.out.println("testing---------");
+		
+	}
+	*/
+	
+	//In both assertions, methods are same, but in hard we directly access from Classcalled Assertion, 
+	//But in Soft assertion, we use "SoftAssert class, as they are not static, 
+	//also assertAll(); is mandatory at the end of the method only for SoftAssert
+	
+	@Test
+	void test_softassertions()
+	{
+		System.out.println("testing---------");
+		System.out.println("testing---------");
+
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals(1, 1); //soft assert
+		
+		System.out.println("testing---------");
+		System.out.println("testing---------");
+		
+		sa.assertAll(); //madatory, then only correct validation we get
+	}
+
+
+}

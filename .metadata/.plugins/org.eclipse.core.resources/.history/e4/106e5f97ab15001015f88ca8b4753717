@@ -1,0 +1,19 @@
+package RD_Learning;
+
+
+Interface I1
+{
+	
+}
+Interface2 I2
+{
+	
+}
+public class Hello implements {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

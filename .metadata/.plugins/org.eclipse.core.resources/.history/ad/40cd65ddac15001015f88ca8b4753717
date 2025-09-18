@@ -1,0 +1,40 @@
+package RD_Learning;
+
+
+interface I1
+{
+	
+	default void m1()
+	{
+		System.out.println("this is default");
+	}
+}
+interface I2
+{
+	default void m1()
+	{
+		System.out.println("this is default");
+	}
+
+}
+public class Hello implements  I1, I2
+{
+
+	@Override
+	default void m1()
+	{
+		System.out.println("this is m1 method of interfac1");
+	}
+	
+	public static void main(String[] args) {
+		
+
+		Hello c = new Hello();
+		c.m1();
+	   
+	  
+		
+		
+	}
+
+}

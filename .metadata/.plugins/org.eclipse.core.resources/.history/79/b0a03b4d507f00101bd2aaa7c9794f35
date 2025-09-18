@@ -1,0 +1,20 @@
+package BasicPgm;
+
+public class CheckVowelPresentOrNot {
+	
+	public static void main(String[] args)
+	{
+		String s="Kavya";
+		boolean status =false;
+		
+		for(int i =0;i<s.length();i++)
+		{
+			char ch=s.charAt(i);
+			if(ch=='a' || ch=='e' || ch=='i' || ch == 'o' || ch=='u')
+			{
+				status=true;
+			}
+		}System.out.println("vowel is present" + status);
+	}
+
+}

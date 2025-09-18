@@ -1,0 +1,23 @@
+package BasicPgm;
+
+public class NoOfRepe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a[]= {1, 2, 1, 3, 4, 5, 5};
+		int number = 1;
+		int count =0;
+		
+		for(int x:a)
+		{
+			if(x==number)
+			{
+				count++;
+				System.out.println("Element found and repeated " + count  + "  "+ "times");
+			}
+		}
+
+	}
+
+}

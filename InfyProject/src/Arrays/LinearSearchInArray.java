@@ -1,0 +1,28 @@
+package Arrays;
+
+public class LinearSearchInArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int a[] = {12, 23, 34, 45, 56};
+		int search_element =23;
+		boolean status = false;
+		
+		for(int x:a)
+		{
+			if(x==search_element)
+			{
+				status = true;
+				System.out.println("Element found");
+			}
+		}
+		
+		if(status==false)
+		{
+			System.out.println("Element not found");
+		}
+	}
+
+}

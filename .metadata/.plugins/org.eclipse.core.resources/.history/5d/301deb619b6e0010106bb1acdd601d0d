@@ -1,0 +1,10 @@
+package BasicPgm;
+
+public class LinearSearchInArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,48 @@
+package Day31;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Assignment01 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://phppot.com/demo/jquery-dependent-dropdown-list-countries-and-states/");
+		driver.manage().window().maximize();
+		
+		WebElement dropdwn = driver.findElement(By.xpath("//select[@class = 'demoInputBox']"));
+		dropdwn.click();
+		
+		
+		Select drop= new Select(dropdwn);
+		drop.selectByValue("China");
+		
+		//find number of options
+		List<WebElement>Options= drop.getOptions();
+		System.out.println("Total number of Options :   "+Options);
+		
+		//print all the options
+		for(WebElement op:Options)
+		{
+			System.out.println(op.getText());
+		}
+		
+		//select one option
+		
+		
+
+	}
+
+}

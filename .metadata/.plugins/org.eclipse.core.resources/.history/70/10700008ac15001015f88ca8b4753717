@@ -1,0 +1,33 @@
+package RD_Learning;
+
+
+interface I1
+{
+	void m1();
+}
+interface I2
+{
+	void m1();
+
+}
+public class Hello implements  I1, I2
+{
+
+	public void m1()
+	{
+		System.out.println("this is m1 method of interfac1");
+	}
+	
+	public void m2()
+	{
+		System.out.println("this is m2 method of interfac2");
+	}
+	public static void main(String[] args) {
+		
+
+		Hello c = new Hello();
+		c.m1();
+		c.m2();
+	}
+
+}

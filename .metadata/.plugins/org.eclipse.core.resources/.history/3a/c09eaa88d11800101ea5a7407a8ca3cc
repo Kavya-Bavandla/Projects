@@ -1,0 +1,31 @@
+package RD_Learning;
+
+import java.util.HashMap;
+
+public class FirstRepeatingCharINAString {
+
+	public static void main(String[] args) {
+		
+		
+		String s ="programmming";
+		
+		HashMap <Character, Integer> map = new HashMap<>();
+		
+		
+		char firstrepeating = '\0';
+		for(int i=0; i<s.length();i++)
+		{
+			char firstrepeating= ch.charAt(i);
+			
+			if(map.containsKey(firstrepeating))
+			{
+				map.put(c, map.get(c)+1);
+			} else {
+				map.put(c,1);
+			}
+		}
+		System.out.println(map);
+
+	}
+
+}

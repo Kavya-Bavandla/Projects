@@ -1,0 +1,19 @@
+package Learning;
+
+public class PG5FactorialOFgivenNumber {
+
+	public static void main(String[] args) {
+		
+		
+		
+		int num=5, factorial=1;
+	
+		for(int i=1;i<=10;i++)
+		{
+			int res =factorial *i;
+		
+		
+		}
+	}
+
+}

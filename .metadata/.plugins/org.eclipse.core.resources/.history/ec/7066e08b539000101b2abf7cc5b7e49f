@@ -1,0 +1,47 @@
+package Day21;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SeleniumWebdriver2 {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup(); // this is used to manage the versions btween chrome and selenium
+		
+		
+		//1. launch the chrome browser
+		WebDriver driver = new ChromeDriver();
+		//ChromeDriver driver = new ChromeDriver();
+		
+		//WebDriver driver = new EdgeDriver();
+		//WebDriver driver = new FirefoxDriver();
+		
+		
+		//2. open URL 
+		driver.get("https://demo.opencart.com/");
+		
+		
+		//3. Validate the page
+		String act_title =driver.getTitle();
+		
+		if(act_title.equals("Your Store"))
+		{
+			System.out.println("Test passed");
+		}
+		else
+		{
+			System.out.println("Test failed");
+		}
+		
+		//4. close browser
+		//driver.close(); //closes current window
+		driver.quit(); //closes all windows
+		
+
+	}
+
+}

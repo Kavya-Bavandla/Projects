@@ -1,0 +1,40 @@
+package RD_Learning;
+
+import java.util.HashMap;
+
+public class FirstRepeatingCharINAString {
+
+	public static void main(String[] args) {
+		
+		
+		String s ="programmming";
+		
+		HashMap <Character, Integer> charPositions = new HashMap<>();
+		
+		
+		char firstrepeating = '\0';
+		
+		for(int i=0; i<s.length();i++)
+		{
+			char currentchar= s.charAt(i);
+			
+			if(charPositions.containsKey(currentchar))
+			{
+				firstrepeating=currentchar;
+				break; // Exit at first repeating character
+			} else {
+				charPositions.put(currentchar, i);  // Store first occurrence index
+			}
+		}
+		if(firstrepeating !='\0')
+		{
+			System.out.println("firstrepeating char is :" +firstrepeating);
+		}else
+		{
+            System.out.println("No repeating characters found.");
+
+		}
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package BasicPgm;
+
+public class ReverseAnumber {
+
+	public static void main(String[] args) {
+		
+		int num = 123;
+		
+		
+
+	}
+
+}

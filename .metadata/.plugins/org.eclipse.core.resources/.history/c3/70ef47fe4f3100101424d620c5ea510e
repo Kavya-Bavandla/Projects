@@ -1,0 +1,26 @@
+package RD_Tech;
+
+public class R3_SubStringofGivenString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		String s = "Kavya";
+	
+		for(int i = 0; i<s.length()-1;i++)
+		{
+			 char ch = s.charAt(i);
+			 
+			 if(ch=='a' || ch == 'e' || ch == 'i' || ch =='o' || ch =='u')
+			 {
+				 System.out.println("Vowels in a String are : " + ch);
+			 }else
+			 {
+				 System.out.println("Consonants in a String are : " + ch);
+			 }
+		}
+		
+	}
+
+}

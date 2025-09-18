@@ -1,0 +1,27 @@
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+
+      int a[] = {5, 10, 7, 20};
+      int b[]= {2, 9, 15, 6};
+      
+      int merge[] = new int[a.length+b.length];
+      
+      
+      for(int i=0; i<a.length;i++)
+      {
+    	  merge[i] = a[i];
+      }
+      
+      for(int j=0;j<b.length;j++)
+      {
+    	  merge[a.length+j] = b[j];
+      }
+      System.out.println(merge.toString());
+      
+      
+      
+        
+    }
+}

@@ -1,0 +1,57 @@
+package Day28;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Assignment {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.manage().window().maximize();
+		
+		WebElement status = driver.findElement(By.xpath("//input[@id='Wikipedia1_wikipedia-search-input']"));
+		System.out.println(status.isEnabled());
+		status.sendKeys("Selenium");
+		driver.findElement(By.xpath("//input[@type = 'submit' ]")).click();
+		
+		
+		WebElement divElement = driver.findElement(By.id("Wikipedia1_wikipedia-search-results"));
+        List<WebElement> links = divElement.findElements(By.tagName("a"));
+        System.out.println(links.size());
+        // Print the list of WebElements or their URLs
+        for (WebElement link : links) {
+        	link.click();
+            System.out.println(link.getAttribute("href"));
+        }
+		
+		
+		Set<String> WindowIds = driver.getWindowHandles();
+		for(String Ids:WindowIds)
+		{
+			System.out.println(Ids);
+			
+			String title= driver.switchTo().window(Ids).getTitle();
+			//System.out.println(title);
+			if(title.equals("Selenium in biology") ||title.equals("Selenium dioxide") )
+			{
+				driver.close();
+			}
+		}
+		
+
+	}
+
+}

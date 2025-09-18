@@ -1,0 +1,60 @@
+package RD_Learning;
+
+
+interface I1
+{
+	
+	void kavya();
+	
+	default void m1()
+	{
+		System.out.println("this is default method of m1 interface i1");
+	}
+	
+	default void m1()
+	{
+		System.out.println("this is default method of m1 interface i1");
+	}
+	
+	
+	
+}
+interface I2
+{
+	void kavya();
+	default void m1()
+	{
+		System.out.println("this is default method of m1 interface i2");
+	}
+	
+
+}
+public class Hello implements  I1, I2
+{
+	public static void main(String[] args) {
+		
+
+		Hello c = new Hello();
+		c.kavya();
+		c.m1();
+	}
+
+	@Override
+	public void kavya() {
+		System.out.println("avya methid");
+		
+	}
+
+	@Override
+	public void m1() {
+		// TODO Auto-generated method stub
+		I1.super.m1();
+		I2.super.m2();
+		
+		
+	}
+
+
+
+
+}

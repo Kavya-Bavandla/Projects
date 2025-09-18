@@ -1,0 +1,21 @@
+package RD_Tech;
+
+public class R3_SubStringofGivenString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		String s = "Kavya";
+	
+		for(int i =0 ;i<s.length()-1; i++)
+		{
+			for(int j =0 ;j<i; j++)
+			{
+				String res = s.substring(i,j);
+				System.out.println(res);
+			}
+		}
+	}
+
+}

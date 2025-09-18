@@ -1,0 +1,22 @@
+package BasicPgm;
+
+public class LinearSearchInArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int a[] = {12, 23, 34, 45, 56};
+		int search_element =32;
+		boolean status = false;
+		
+		for(int x:a)
+		{
+			if(x==search_element)
+			{
+				
+			}
+		}
+	}
+
+}

@@ -1,0 +1,31 @@
+package Collections;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListDemo1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		List<Integer> ls = new LinkedList<>();
+		
+		ls.add(1);
+		ls.add(2);
+		ls.add(3);
+
+		ls.add(5);
+		ls.add(0);
+
+		ls.add(3);
+		ls.add(2);
+		System.out.println(ls);
+
+
+
+		
+		
+	}
+
+}

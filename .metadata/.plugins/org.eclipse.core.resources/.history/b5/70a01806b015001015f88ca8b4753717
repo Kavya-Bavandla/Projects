@@ -1,0 +1,37 @@
+package RD_Learning;
+
+
+interface I1
+{
+	
+	void kavya();
+	
+	
+	
+}
+interface I2
+{
+	void kavya();
+	
+
+}
+public class Hello implements  I1, I2
+{
+	public static void main(String[] args) {
+		
+
+		Hello c = new Hello();
+		c.();
+		
+	}
+
+	@Override
+	public void kavya() {
+		System.out.println("avya methid");
+		
+	}
+
+
+
+
+}

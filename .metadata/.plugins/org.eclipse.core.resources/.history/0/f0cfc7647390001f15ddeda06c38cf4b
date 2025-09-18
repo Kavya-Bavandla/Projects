@@ -1,0 +1,32 @@
+package Day28;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Navigate {
+
+	public static void main(String[] args) throws MalformedURLException 
+	{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		//get method only accepts String URL
+		//driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		//navigate method accepts both String URL+ URL object
+		//1. String URL
+		//driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		
+		//2. url object
+		URL myurl = new URL("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.navigate().to(myurl);
+
+	}
+
+}
