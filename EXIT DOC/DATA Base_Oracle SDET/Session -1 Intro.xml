@@ -1,0 +1,38 @@
+Past, files, excels they use to store
+
+
+1. DBMS-------> store the data in tables---(eg:Dbase, Foxpro MS access etc)
+2. RDBMS ---> In order to place the relation btwn the tables(eg: Oracle, MY-SQL Server, DB2, My Sql, MS-Acces etc.......)
+
+
+Even the RDBMS is unable to store the Data. To MAINTAIN huge data, BIG Data (Spark)came into Market
+
+
+1. What is Database? Data Storage Area
+
+GUI(Scripting Lang)--->WEBLOGIC(Programming Lang)---->DB(Oracle)
+
+
+2. What is SQL? Structed query Lang, used to communicate with DB, to perform different kind of operations
+In order to interact with DB, we need SQL(designed by ANCI Comapny) Lang.
+
+3. Database Components (Client, server software)
+
+	1 Client: To perform certain actions , sends the request.
+		2 types of Client:
+			1. GUI (SQL Developer)
+			2. Command Line interface (SQL Plus)
+			
+			
+		For MySQL---->MySQLWorkbencH(gui)
+			MySQL---->MYSQLcOMMADNlINETOOL    (cOMMAND lINE Interface)
+	
+	
+	2.Server: It is responsible for storing the data. (Remote machine)
+	
+	
+Both can be in same or differnt systems. 90% Server will be installed on unix/linux OS
+
+
+
+

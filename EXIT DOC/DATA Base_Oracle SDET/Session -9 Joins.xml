@@ -1,0 +1,193 @@
+ Session -9
+ 
+ 
+ JOINS are used to get the data from multiple tables
+ we should have common colm btwn multiple tables
+ 
+ 1. Equi Join/Inner Join/Simple Join/Inner
+ 2. Right Join
+ 3. Left Join
+ 4. Full Join---NOT SUPPORTED IN Mysql
+ 5. Self Join
+ 
+ 
+ 1. INNER Join : COMMON data we will get from 2 tables based on condition (Matched records)
+				
+				SELECT * FROM TABLE1 inner join TABLE2 on TABLE1.NUMID = TABLE2.NUMID;   
+				Output: [12,34,22]
+				
+CREATE TABLE TAB1 (NUMID INT(3));
+CREATE TABLE TAB2 (NUMID INT(3));
+
+insert into TAB1 values (12);           insert into TAB2 values (12);
+insert into TAB1 values (23);			insert into TAB1 values (34);
+insert into TAB1 values (34);			insert into TAB1 values (22);
+insert into TAB1 values (22);			insert into TAB1 values (13);
+
+
+ 
+TABLE1 			TABLE2
+ NUMID			NUMID
+ 12				12
+ 23				34
+ 34				22
+ 22				13
+ ==============================================================================================================================================
+ 2. LEFT Join: Matched records from both tables and unmatched records from left table
+ 3. Right Join: Matched records from both tables and unmatched records from Right table
+ 4. Full Join: Matched records + unmatched records from Right table +unmatched records from Left table
+ 
+ ================================================================================================================================================
+ 
+  1. INNER Join : SELECT * FROM TAB1 inner join TAB2 on TAB1.NUMID = TAB2.NUMID;  
+  Output: 
+  NUMID 	NUMID
+  12		12
+  34		34
+  22		22
+   
+  2. Left Join  : SELECT * FROM TAB1 left  join TAB2 on TAB1.NUMID = TAB2.NUMID;  Output: [23, 12,34,22] 
+  
+   NUMID 	NUMID
+  12		12
+  34		34
+  22		22
+  23		null
+   
+
+  
+  3. Right Join : SELECT * FROM TAB1 right  join TAB2 on TAB1.NUMID = TAB2.NUMID;  Output: [12,34,22,13] 
+  
+   NUMID 	NUMID
+  12		12
+  34		34
+  22		22
+  null 		13
+  
+  4. Full Join  : SELECT * FROM TAB1 Full  join TAB2 on TAB1.NUMID = TAB2.NUMID;  Output: [23,12,34,22,13] 
+  
+  not supported in Mysql, supported in SQL other DB
+  ================================================================================================================================================
+  
+  1. INNER Join :
+  
+  SELECT * FROM EMPLOYEE;
+  SELECT * FROM DEPARTMENTs;
+  
+  1.SELECT * FROM EMPLOYEE inner join DEPARTMENTs on EMPLOYEE.DEPARTMENT_ID = DEPARTMENTs.DEPARTMENT_ID;
+  
+  2. SELECT * FROM EMPLOYEE inner join DEPARTMENTs on EMPLOYEE.DEPARTMENT_ID <> DEPARTMENTs.DEPARTMENT_ID;
+  
+  
+    SELECT FIRST_NMAE , SALARY, DEPARTMENTs.DEPARTMENT_ID FROM EMPLOYEE inner join DEPARTMENTs on EMPLOYEE.DEPARTMENT_ID = DEPARTMENTs.DEPARTMENT_ID;
+	
+	o/p: first_nmae, SALARY, dept_id
+	
+	
+	===========================================================================================================================================
+	
+	
+	 2. LEFT Join:
+	 
+SELECT EMPLOYEE_ID, FIRST_NMAE , JOIB_ID, DEPARTMENT_ID, DEPARTMENT_NAME, LOCATION_ID
+	FROM EMPLOYEES left join DEPARTMENTs 
+		on DEPARTMENT_ID = DEPARTMENT_ID;
+		
+		Heer it will get ambiguity bz DEPARTMENT_ID is comon for 2 tables, so we need wrtte as
+		
+		
+SELECT EMPLOYEE_ID, FIRST_NMAE , JOIB_ID, DEPARTMENTs.DEPARTMENT_ID, DEPARTMENT_NAME, LOCATION_ID
+	FROM EMPLOYEES left join DEPARTMENTs 
+		on (EMPLOYEES.DEPARTMENT_ID = DEPARTMENTs.DEPARTMENT_ID);
+===============================================================================================================
+
+3. RIGHT Join:
+
+SELECT EMPLOYEE_ID, FIRST_NMAE , JOIB_ID, DEPARTMENTs.DEPARTMENT_ID, DEPARTMENT_NAME, LOCATION_ID
+	FROM EMPLOYEES right join DEPARTMENTs 
+		on (EMPLOYEES.DEPARTMENT_ID = DEPARTMENTs.DEPARTMENT_ID);
+		
+		
+==============================================================================================================================		==============
+		
+5. Self Join : if you want to join table with same TABLE
+
+		SELECT E.EMPLOYEE_ID, M.MANAGER_ID,E.FIRST_NAME FROM EMPLOYEE E, EMPLOYEE M
+	WHERE  E. EMPLOYEE_ID = M.MANAGER_ID;
+		
+======================================================================================================================================================
+
+
+
+
+SUB QUERIES: Sub Query is a query within a Query, SubQuery contains 2 parts
+
+	1. Outer Query
+	2. Inner Query
+	
+The Inner Query output belongs the input of Outer Query
+They are 2 types of Sub QUERIES:
+1. Single row sub query ( <=, >= , !=)
+2. Multi row Sub Query IN,ANY,ALL
+
+
+IN : If inner query returns multiple values
+ANY: Indiviudal element
+ALL: return ALL
+  
+  
+Display empoyees whose SALARY is less than the Ellens SALARY ?
+	
+	1. SELECT SALARY FROM EMPLOYEES WHERE FIRST_NAME = 'Ellens';  o/p: 11000/-
+	
+	2. SELECT SALARY FROM EMPLOYEES WHERE SALARY<11000;
+	
+Instead of writing 2 query we can write as below
+
+SELECT SALARY FROM EMPLOYEES WHERE SALARY (SELECT SALARY FROM EMPLOYEES WHERE FIRST_NAME = 'Ellens');
+
+
+	Second Max SALARY of EMPLOYEE
+	
+	1. SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY< (SELECT MAX(SALARY) FROM EMPLOYEE ); Inner query : 24000
+	
+			Outer query: all the sal less than 24000
+	
+	Third Max SALARY of EMPLOYEE
+	
+	SELECT MAX(SALARY) FROM EMPLOYEES WHERE SALARY<
+		(SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY< 
+			(SELECT MAX(SALARY) FROM EMPLOYEE ));
+
+
+
+1. sINGLE ROW Subquery -----> IF subquery gives output as single row
+
+2. Multiple ROW Subquery---IF subquery gives output as MULTIPLE row
+=======================================================================================================================================
+
+FIND THE SALARY OF EMPLOYEES whose salary is greater than the salary of emeplyee whose EMPLOYEE_ID 150
+
+SELECT SALARY FROM EMPLOYEES WHERE SALARY >(SELECT SALARY FROM EMPLOYEES WHERE EMPLOYEE_ID=150);
+
+=========================================================================================================================================
+
+Display the employees who all are earning the HIghest salary
+
+SELECT * FROM EMPLOYEES WHERE SALARY =(SELECT MAX(SALARY) FROM EMPLOYEES);
+==========================================================================================================================================
+Display employees whos salary is equal to the salary of the atleast one EMPLOYEEin department id =30
+
+SELECT * FROM EMPLOYEES WHERE SALARY IN(SELECT SALARY FROM EMPLOYESS WHERE DEPARTMENT_ID=30);
+
+SELECT * FROM EMPLOYEES WHERE SALARY < ANY(SELECT SALARY FROM EMPLOYESS WHERE DEPARTMENT_ID=30);
+
+SELECT * FROM EMPLOYEES WHERE SALARY > ANY(SELECT SALARY FROM EMPLOYESS WHERE DEPARTMENT_ID=30);
+========================================================================================================================================
+
+Display DEPARTMENTNAME IN 
+
+	
+
+ 
+ 

@@ -1,0 +1,63 @@
+Session -4 
+
+Logical Operators: If you want to use multiple conditions
+	 1. AND
+	 2. OR
+	 3. not
+	 
+	 SELECT * FROM EMPLOYEE WHERE SALARY >15000 AND JOB_ID = 'AD_VP';---BOTH should be satisfied
+	 
+	 SELECT * FROM EMPLOYEE WHERE SALARY >15000 OR JOB_ID = 'AD_VP';----> ANY ONE can satify
+	 
+	 SELECT * FROM EMPLOYEE WHERE NOT FIRST_NAME = 'DAVID';--->OTHER THAN DAVID, WE get all values
+	 ====================================================================================================
+	 
+BETWEEN and "not BETWEEN":
+
+ SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 1000 AND 2000;
+ SELECT * FROM EMPLOYEE WHERE SALARY >=1000  AND <=2000;
+ SELECT * FROM EMPLOYEE WHERE SALARY not BETWEEN 1000 AND 2000;
+ '
+ 
+ 
+ ====================================================================================================================
+ 
+ "IN " and "NOT IN"
+ 
+  SELECT * FROM EMPLOYEE WHERE SALARY= 4000 OR SALARY= 1000 OR SALARY=2000;
+  
+  Instead of abocve query we can use
+  SELECT * FROM EMPLOYEE WHERE SALARY IN(4000,1000,2000);
+  ======================================================================================================
+  
+  
+  PATTERN MATCHING
+  
+ 
+  
+  SELECT * FROM EMPLOYEE WHERE FISRT_NAME LIKE 'S%';==========> character starts with S ..eg: sara, sruti
+  
+   SELECT * FROM EMPLOYEE WHERE FISRT_NAME LIKE '%r';============> character should ends with R
+   
+    SELECT * FROM EMPLOYEE WHERE FISRT_NAME LIKE 'S%r';----------> firstname is 'S' and lastname is 'r'
+	
+	
+	SELECT * FROM EMPLOYEE WHERE FISRT_NAME NOT LIKE 'S%';--------> who name not start with S%
+	
+	
+	SELECT * FROM EMPLOYEE WHERE FISRT_NAME LIKE '%e_';----> % represent many char, and '_' represent one char, so last butone should be char e eg: Lex
+	
+	SELECT * FROM EMPLOYEE WHERE FISRT_NAME LIKE '___';-------> 3 spaces, so 3 characters name it will display
+	
+	
+	
+	'_' ---> single underscore ---> one char
+	'____'----> many underscore----> many char
+	
+
+
+
+
+ 
+ 
+ 

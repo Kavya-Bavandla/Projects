@@ -1,0 +1,95 @@
+
+SQL: Case insensitive
+
+
+Session 3:
+
+ 1. DDL(Dta Def Lang)--->Design people need to know [ CREATE, ALTER, DROP, TRUNCATE, RENAME ]
+ 
+ 2. DML(Data Manipulation)--->Design people need to know [insert, update, delete)
+ 
+ 
+ 3. DRL/DQL(Retrivel/Query)-->Devlopers (select)
+ 
+ 4. TCL(Transaction Control Lang)--->Devlopers [commit, rollback, save point]
+ 
+ 5. DCL (Control)--->Administrator people need to know [GRANT, REVOKE]
+ 
+ 
+Create database/schema( Database --> tables(object))
+ In Mysql, Schmea AND database are same
+ 
+ 
+ 1. CREATE DATABASE mydb;
+ 2.	DROP DATABASE mydb;
+ 
+ 1. CREATE SCHEMA mydb;
+ 2. DROP SCHEMA mydb;
+ 
+ 
+ DB name should be unique in SQL
+ 
+ CREATE DATABSE IF NOT EXISTS mydb;
+ 
+ 2.   CREATE TABLE STUDENT(SNO INT(5), SNAME VARCHAR(15), SMARKS INT(3));
+ 3.   INSERT INTO STUDENT VALUES(101, 'kCCAR', 34);
+ 
+     If you want to send values in diff order, you can write as 
+	INSERT INTO STUDENT (SNO, SNAME, MARKS)VALUES('qiwq' ,12, 43);
+	
+	If you dont know the marks or value of the data , you can write null
+	INSERT INTO STUDENT VALUES('DNAN' ,12, NULL);
+ 
+ 
+ 4. How to select the specific rows.colms from DB
+ 
+	  SELECT  order_id,  item, customer_id from Orders;
+	  
+	  IF you want to give own names to colmns , we use alias (oid, itid, custid)
+	  SELECT  oid order_id, itid item, custid customer_id FROM Orders;
+	  
+	  If you want to add money to the colm sal, we can write below
+	   SELECT  order_id,  item, customer_id , salary+5000 FROM  Orders;
+	   
+	   
+  5 . where condition/clause based on filtering
+  
+  SELECT * FROM EMPLOYEE WHERE SAL = 15000;
+  
+  SELECT * FROM EMPLOYEE WHERE MARKS = NULL;----> HERE the query wont work as null is not int or string
+  
+  SELECT * FROM EMPLOYEE WHERE MARKS is null;---> we have to use like this
+	  
+	  
+	  
+	  6. DISTINCT---> IF OYU WANT TO PRINT THE RECORD OF UNIQUE WITH no duplicates
+	   SELECT DISTINCT SALARY FROM EMPLOYEE;
+	   SELECT DISTINCT * FROM EMPLOYEE;
+	   
+	  
+	  
+	  
+=========================================================================================================
+
+SQL Data Types:
+
+1. Numeric (TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT, FLOAT, DOUBLE(,), DECIMAL(,)
+
+2. text		(char(), varchar(), blob, mediumtext, mediumblog, longtext, longblob)
+
+3. Date/Time (DATE, DATETIME, TIMESTAMP, TIME)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

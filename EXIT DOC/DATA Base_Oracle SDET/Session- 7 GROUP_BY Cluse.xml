@@ -1,0 +1,81 @@
+
+Session- 7 
+
+GROUP_BY CLASS: Grouping the results from a TABLE
+
+In a table,  need sum of sal of employee, who belongs to each department.
+
+	 SELECT DEPARTMENT_ID SUM(SALARY) FROM employee; // sum of salary of whole TABLE
+	 
+	 SELECT DEPARTMENT_ID,SUM(SALARY) FROM employee GROUP BY DEPARTMENT_ID; // sum of salary for specific DEPARTMENT
+	 
+	 SELECT DEPARTMENT_ID,AVG(SALARY) FROM employee GROUP BY DEPARTMENT_ID; // AVG of salary for specific DEPARTMENT
+	 
+	  SELECT DEPARTMENT_ID,MAX(SALARY), MIN(SALARY), FROM employee GROUP BY DEPARTMENT_ID; //max and min sal of department
+	  
+	  
+In a table, how many employee people are working iN job_id
+
+	SELECT JOB_ID COUNT(*)  FROM EMPLOYEE GROUP BY JOB_ID;
+	SELECT JOB_ID, DEPARTMENT_ID COUNT(*)  FROM EMPLOYEE GROUP BY JOB_ID, DEPARTMENT_ID;
+
+======================================================================================================================================
+	
+HAVING CLASS: perform certain conditions Applied on GROUPED class
+
+	wANT TO PRINT the data if count is >20
+	
+	SELECT JOB_ID COUNT(*)  FROM EMPLOYEE GROUP BY JOB_ID HAVING COUNT(*)>20 ;
+	
+	SELECT DEPARTMENT_ID,SUM(SALARY) FROM employee GROUP BY DEPARTMENT_ID HAVING sum(salary)>20000;
+	===============================================================================================================================
+	
+	
+	WHERE CLASS:  Before group class we can apply where class
+	
+	SELECT DEPARTMENT_ID,SUM(SALARY) FROM employee WHERE DEPARTMENT_ID<>50 GROUP BY DEPARTMENT_ID ; //displays except 50
+	
+	<>= not equal to 
+	
+	SELECT DEPARTMENT_ID,SUM(SALARY) FROM employee WHERE DEPARTMENT_ID<>50 GROUP BY DEPARTMENT_ID HAVING sum(SALARY)>10000;
+
+
+================================================================================================================================================
+
+
+
+ORDER_BY class: SORTED 
+
+	SELECT * FROM EMPLOYEE ORDER BY DEPARTMENT_ID desc;
+	SELECT * FROM EMPLOYEE ORDER BY DEPARTMENT_ID desc;
+	
+=============================================================================================================================
+
+Below is the Complete Query, in which we see usage of all classes
+
+SELECT DEPARTMENT_ID, SUM(SALARY) FROM employee
+WHERE DEPARTMENT_ID<100>
+GROUP BY DEPARTMENT_ID
+HAVING SUM(SALARY)>2000
+ORDER BY SUM(SALARY)DESC;
+
+
+==================================================================================
+
+ORDER OF execution:
+
+SELECT column names 
+	FROM employee
+		WHERE condition
+			GROUP BY columnnames
+				HAVING condition
+					ORDER BY column-names
+					
+					=================================================================================================
+
+
+
+	
+	
+	
+	 

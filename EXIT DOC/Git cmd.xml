@@ -1,0 +1,102 @@
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git branch -a
+* Kavya
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/Kavya
+  remotes/origin/main
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git status
+On branch Kavya
+Your branch is up to date with 'origin/Kavya'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ManualTesting/NIT9PM-June2023.sql
+        modified:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+        modified:   src/test/java/variableScope.java
+
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git restore ManualTesting/NIT9PM-June2023.sql
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git status
+On branch Kavya
+Your branch is up to date with 'origin/Kavya'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+        modified:   src/test/java/variableScope.java
+
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git restore src/test/java/variableScope.java
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git status
+On branch Kavya
+Your branch is up to date with 'origin/Kavya'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git add .
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git status
+On branch Kavya
+Your branch is up to date with 'origin/Kavya'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git commit -m "Prime number program added"
+[Kavya 3d01d50] Prime number program added
+ 1 file changed, 18 insertions(+)
+ create mode 100644 src/test/java/StudentPractice/Kavya/PrimeNumber.java
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git status
+On branch Kavya
+Your branch is ahead of 'origin/Kavya' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+kgaddam@INLEN8520042741 MINGW64 /c/Automation/NIT-9PM-June2023 (Kavya)
+$ git push
+info: please complete authentication in your browser...
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 757 bytes | 252.00 KiB/s, done.
+Total 8 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/TheQAGuy007/NIT-9PM-June2023.git
+   41cda2d..3d01d50  Kavya -> Kavya
+

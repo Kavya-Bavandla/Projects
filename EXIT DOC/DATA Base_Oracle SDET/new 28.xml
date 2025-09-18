@@ -1,0 +1,55 @@
+
+
+ DDL(Dta Def Lang)--->Design people need to know [ CREATE, ALTER, DROP, TRUNCATE, RENAME ]
+ 
+ 
+  1. CREATE---> IF YOU WANT TO CREate anything we can userinput
+		
+		CREATE TABLE STUDENT (SID INT(4), SNAME VARCHAR(15));
+	
+	DESCRIBE STUDENT;
+	
+	
+	INSERT INTO STUDENT VALUES(101, 'kAVYA');
+	INSERT INTO STUDENT VALUES(102, 'Don');
+	INSERT INTO STUDENT VALUES(103, 'Super');
+	
+	commit;
+	
+	
+	2. ALTER---> rename , update, add the database
+	
+	ADD:
+		ALTER TABLE STUDENT ADD (GRADE , VARCHAR(2));---> ADD NEw column
+		ALTER TABLE STUDENT DROP COLUMN GRADE;---> drop existing COLUMN
+	
+	
+	Update:
+		ALTER TABLE STUDENT MODIFY COLUMN SNAME VARCHAR(20);---> increasing the size of SNAME
+		If you want to decrease the size, we should first clear the data, and add new size
+	
+	RENAME:
+		ALTER TABLE STUDENT RENAME COLUMN SNAME TO STUNAME;
+		
+	DROP: Everything is deleted (table gone)
+	
+	
+	TRUNCATE: content is removed,, but rollback option is not present. but table structure is present 
+	
+	
+	DELETE: content is removed, data can be rollback option is present.
+	
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+  

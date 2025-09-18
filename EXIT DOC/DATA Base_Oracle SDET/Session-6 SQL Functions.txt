@@ -1,0 +1,111 @@
+
+
+SQL Built-IN Functions:
+
+1. Numeric
+2. String
+3. Date
+4. Aggregrate
+
+
+String Functions:
+		1. Upper(), Lower()----> CONVERTS THE data in upper and lower case, just it show but not chnage in TABLE
+			SELECT UPPER(First_name) from EMPLOYEE; 
+			SELECT UPPER('smith');
+			
+			SELECT LOWER(First_name) from EMPLOYEE; 
+			
+		2. LENGTH-->count the number of char
+			
+			SELECT LENGTH ('WELCOME');
+			SELECT LENGTH(FIRST_NAME) FROM EMPLOYEE;----> display all the length of all names in colmn of firstname
+			
+		3. SELECT * FROM EMPLOYEE WHERE LENGTH (FIRSTNAME)= 4;----> displays 4 char
+		
+		4. TRIM()
+			SELECT TRIM('   welcome   ') ;----> remove spaces before and after the name, o/p:(welcome)
+			
+			SELECT TRIM('Z' from 'zzoraclezz');-------> remoce the z in the word, and displays the output :(oracle)
+			
+		5. INSTR
+			
+			SELECT INSTR('WELCOME','E'); ----> display the position of char in a string.
+			
+		6. SUBSTR/SUBSTRING
+		
+			SELECT SUBSTR('ORACLE', 2, 3); o/p: RAC
+			here 2 = starting point, 3= after start, count 3
+			
+			SELECT SUBSTR('ORACLE', 3, 3); o/p: ACL
+			SELECT SUBSTR('ORACLE', 4, 3);   CLE
+			
+			
+			SELECT SUBSTRING('ORACLE', 2, 3); o/p: RAC
+			here 2 = starting point, 3= after start, count 3
+			
+			SELECT SUBSTRING('ORACLE', 3, 3); o/p: ACL
+			SELECT SUBSTRING('ORACLE', 4, 3);   CLE
+			
+			
+			SELECT SUBSTRING (FIRSTNAME, 1, 3) FROM employee; -----> all the first names only fist 3 char will be printed
+			
+		7. Concatination
+			SELECT CONCAT('ORACLE', 'WELCOME');
+			SELECT CONCAT( FIRST_NAME , LAST_NAME )FROM EMPLOYEE;
+			
+			
+1. Numeric
+	   SELECT ABS(40);//40
+	   SELECT ABS(-40);//40
+	   SELECT SQRT(25);//5
+	   SELECT MOD(10,3)//1
+	   SELECT power(2, 5);//32
+	   
+	   TRUNCATE()---> select truncate(40.1234, 3);--------> only takes 3 value after decimal------>//o/p: 40.123
+					select truncate(40.1234, 2);--------> only takes 2 value after decimal------>//o/p: 40.12
+					select truncate(40232, -1);--------> last one digit becomes zero------>//o/p: 40230
+					select truncate(23223, -2);--------> last 2 digit becomes zero------>//o/p: 23200
+					
+		GREATEST()
+		SELECT GREATEST(100, 200, 300);//300
+		SELECT least(100, 200, 300);//100
+		
+		
+3. DATE functions:
+
+	SELECT CURDATE();
+	SELECT CURRENT_DATE();
+	
+	SELECT CURTIME();
+	SLEECT CURRENT_TIME();
+	
+	SELECT NOW();---> DISPLAY CURRENT data and time
+	
+	SELECT SYSDATE();
+	
+	SELECT MONTH("2019-04-11");--->5
+	SELECT YEAR("2019-04-11");--->2019
+	SELECT DAY("2019-04-11");--->11
+	
+	===============================================================================================================================================
+	
+	
+	SELECT * FROM EMPLYEE WHERE YEAR(HIRE_DATE)="1987"
+	
+	SELECT * FROM EMPLYEE WHERE MONTH(HIRE_DATE)="3"
+	SELECT * FROM EMPLYEE WHERE MONTHNAME(HIRE_DATE)= "JUNE"
+	
+	===============================================================================================================================================
+	
+4. Aggregate Functions---> consider single coln of all rows. always return single value
+
+	SELECT AVG(SALARY)* FROM EMPLYEE;
+	SELECT SUM(SALARY)* FROM EMPLYEE;
+	SELECT MIN(SALARY)* FROM EMPLYEE;
+	SELECT MAX(SALARY)* FROM EMPLYEE;
+	SELECT COUNT(*) FROM EMPLYEE;//COUNTS all the records in table)
+		
+	
+	   
+	   
+		
